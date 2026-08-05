@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BUS 100 - Introduction to Contemporary Business</title>
+
+<style>
+:root{
+    --primary:#004990;
+    --accent:#00a3e0;
+    --bg:#f5f7fb;
+    --card:#ffffff;
+    --text:#222;
+    --border:#dbe2ea;
+}
+
+[data-theme="dark"]{
+    --primary:#4da3ff;
+    --accent:#00c2ff;
+    --bg:#121212;
+    --card:#1f1f1f;
+    --text:#f2f2f2;
+    --border:#333;
+}
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Segoe UI, Arial, sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.6;
+}
+
+header{
+    background:linear-gradient(135deg,var(--primary),var(--accent));
+    color:white;
+    padding:40px 20px;
+}
+
+.hero{
+    max-width:1200px;
+    margin:auto;
+}
+
+.hero h1{
+    font-size:2.5rem;
+}
+
+.hero p{
+    margin-top:10px;
+    font-size:1.1rem;
+}
+
+.topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:20px;
+}
+
+.search-box{
+    padding:12px;
+    width:300px;
+    border:none;
+    border-radius:8px;
+}
+
+.button{
+    background:white;
+    color:var(--primary);
+    border:none;
+    padding:12px 16px;
+    border-radius:8px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+nav{
+    position:sticky;
+    top:0;
+    background:var(--card);
+    padding:12px;
+    border-bottom:1px solid var(--border);
+    z-index:999;
+}
+
+nav ul{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    justify-content:center;
+}
+
+nav a{
+    text-decoration:none;
+    color:var(--text);
+    font-weight:600;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:30px 20px;
+}
+
+.section{
+    margin-bottom:40px;
+}
+
+.card-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:var(--card);
+    padding:20px;
+    border-radius:12px;
+    border:1px solid var(--border);
+}
+
+.card h3{
+    margin-bottom:10px;
+    color:var(--primary);
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:10px;
+}
+
+table th,
+table td{
+    border:1px solid var(--border);
+    padding:10px;
+}
+
+table th{
+    background:var(--primary);
+    color:white;
+}
+
+details{
+    background:var(--card);
+    border:1px solid var(--border);
+    padding:15px;
+    border-radius:10px;
+    margin-bottom:10px;
+}
+
+summary{
+    font-weight:bold;
+    cursor:pointer;
+    color:var(--primary);
+}
+
+.timeline{
+    border-left:4px solid var(--accent);
+    margin-left:10px;
+}
+
+.timeline-item{
+    padding:15px 20px;
+    position:relative;
+}
+
+.timeline-item::before{
+    content:'';
+    position:absolute;
+    left:-11px;
+    top:20px;
+    width:16px;
+    height:16px;
+    background:var(--accent);
+    border-radius:50%;
+}
+
+.footer{
+    text-align:center;
+    padding:25px;
+    border-top:1px solid var(--border);
+}
+
+.highlight{
+    background:#ffe564;
+    color:black;
+}
+
+@media(max-width:768px){
+    .hero h1{
+        font-size:2rem;
+    }
+
+    .search-box{
+        width:100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="hero">
+<h1>BUS 100 – Introduction to Contemporary Business</h1>
+<p>Fall 2026 | 3 Credit Hours | Tu/Th 9:30 AM – 10:45 AM</p>
+<p>Federal Hall #0009</p>
+
+<div class="topbar">
+<input
+type="text"
+id="searchInput"
+class="search-box"
+placeholder="Search syllabus..."
+>
+<button class="button" onclick="toggleTheme()">
+🌙 Dark Mode
+</button>
+</div>
+</div>
+</header>
+
+<nav>
+<ul>
+<li>#instructor></li>
+<li>#overview</li>
+<li>#objectives</li>
+<li>#grading></li>
+<li>#assignments</li>
+<li>#policies</li>
+<li>#schedule</li>
+</ul>
+</nav>
+
+<div class="container" id="content">
+
+<section class="section" id="instructor">
+<h2>Instructor Information</h2>
+
+<div class="card-grid">
+<div class="card">
+<h3>Dr. Jin Park</h3>
+<p>Federal Hall #116</p>
+<p>Phone: (812) 237-9036</p>
+<p>Email: jin.park@indstate.edu</p>
+<p>Office Hours: Mon-Thu 2-4 PM</p>
+</div>
+</div>
+</section>
+
+<section class="section" id="overview">
+<h2>Course Overview</h2>
+
+<div class="card">
+<p>
+BUS 100 introduces students to contemporary business and
+helps first-year students connect with the Scott College
+of Business through exploration of accounting, finance,
+marketing, management, supply chain management, HR,
+professional development, teamwork, ethics, and AI.
+</p>
+
+<br>
+
+<h3>Required Text</h3>
+<p>
+Better Business (7th Edition)
+by Solomon, Poatsy & Martin
+</p>
+</div>
+</section>
+
+<section class="section" id="objectives">
+<h2>Learning Objectives</h2>
+
+<div class="card-grid">
+
+<div class="card">Apply academic success strategies.</div>
+
+<div class="card">Develop academic and career planning skills.</div>
+
+<div class="card">Demonstrate professional communication.</div>
+
+<div class="card">Apply critical thinking and AI tools.</div>
+
+<div class="card">Understand major business disciplines.</div>
+
+<div class="card">Analyze environmental influences on business.</div>
+
+<div class="card">Evaluate ethics, diversity, and inclusion.</div>
+
+</div>
+</section>
+
+<section class="section" id="grading">
+<h2>Grading</h2>
+
+<table>
+<tr>
+<th>Item</th>
+<th>Points</th>
+</tr>
+<tr>
+<td>Chapter Learning Objective Notes</td>
+<td>120</td>
+</tr>
+<tr>
+<td>Assignments</td>
+<td>160</td>
+</tr>
+<tr>
+<td>Quizzes</td>
+<td>120</td>
+</tr>
+<tr>
+<td>Exams</td>
+<td>100</td>
+</tr>
+<tr>
+<td>Final Exam</td>
+<td>100</td>
+</tr>
+<tr>
+<th>Total</th>
+<th>600</th>
+</tr>
+</table>
+
+<br>
+
+<table>
+<tr>
+<th>Grade</th>
+<th>Minimum %</th>
+</tr>
+<tr><td>A+</td><td>97.5%</td></tr>
+<tr><td>A</td><td>93%</td></tr>
+<tr><td>A-</td><td>90%</td></tr>
+<tr><td>B+</td><td>87.5%</td></tr>
+<tr><td>B</td><td>82%</td></tr>
+<tr><td>B-</td><td>79.5%</td></tr>
+<tr><td>C+</td><td>77%</td></tr>
+<tr><td>C</td><td>71%</td></tr>
+<tr><td>C-</td><td>69%</td></tr>
+<tr><td>D+</td><td>66%</td></tr>
+<tr><td>D</td><td>60.5%</td></tr>
+<tr><td>F</td><td>&lt;59%</td></tr>
+</table>
+
+</section>
+
+<section class="section" id="assignments">
+<h2>Assignments</h2>
+
+<div class="card-grid">
+
+<div class="card">
+<h3>Learning Objective Notes</h3>
+<p>
+Structured textbook reading reflections organized
+around chapter learning goals.
+</p>
+</div>
+
+<div class="card">
+<h3>Case Analyses</h3>
+<p>
+Individual or team analysis of business situations
+requiring critical thinking and communication.
+</p>
+</div>
+
+<div class="card">
+<h3>Quizzes</h3>
+<p>
+Regular assessments on assigned readings and class discussions.
+</p>
+</div>
+
+<div class="card">
+<h3>Exams</h3>
+<p>
+Midterm and comprehensive final exam.
+</p>
+</div>
+
+</div>
+</section>
+
+<section class="section" id="policies">
+<h2>Policies</h2>
+
+<details>
+<summary>Attendance</summary>
+<p>
+Perfect attendance earns up to 40 bonus points.
+Unexcused absences affect attendance credit.
+</p>
+</details>
+
+<details>
+<summary>Academic Integrity</summary>
+<p>
+Plagiarism may result in a zero assignment grade
+or course failure.
+</p>
+</details>
+
+<details>
+<summary>Communication</summary>
+<p>
+Canvas Inbox is the official communication method.
+Responses are typically within 24 hours on weekdays.
+</p>
+</details>
+
+<details>
+<summary>Technology</summary>
+<p>
+Devices are permitted for class-related activities only.
+</p>
+</details>
+
+<details>
+<summary>Accommodations</summary>
+<p>
+Students requiring accommodations should contact
+Disability Support Services promptly.
+</p>
+</details>
+
+</section>
+
+<section class="section" id="schedule">
+<h2>Course Schedule</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+Week 1 • Business Basics
+</div>
+
+<div class="timeline-item">
+Week 2 • Economics
+</div>
+
+<div class="timeline-item">
+Week 3 • Ethics in Business
+</div>
+
+<div class="timeline-item">
+Week 4 • Global Economy + Team Report 1
+</div>
+
+<div class="timeline-item">
+Week 5 • Entrepreneurship
+</div>
+
+<div class="timeline-item">
+Weeks 6-9 • Management, Leadership, HR
+</div>
+
+<div class="timeline-item">
+Midterm Exam (Chapters 1-9)
+</div>
+
+<div class="timeline-item">
+Marketing & Consumer Behavior
+</div>
+
+<div class="timeline-item">
+Supply Chain Management
+</div>
+
+<div class="timeline-item">
+Finance & Accounting
+</div>
+
+<div class="timeline-item">
+Investments & Securities
+</div>
+
+<div class="timeline-item">
+Final Exam (Chapters 10-16)
+</div>
+
+</div>
+</section>
+
+</div>
+
+<footer class="footer">
+BUS 100 • Scott College of Business • Indiana State University
+</footer>
+
+<script>
+function toggleTheme() {
+    const currentTheme =
+        document.documentElement.getAttribute("data-theme");
+
+    if(currentTheme === "dark"){
+        document.documentElement.removeAttribute("data-theme");
+        localStorage.setItem("theme","light");
+    } else {
+        document.documentElement.setAttribute("data-theme","dark");
+        localStorage.setItem("theme","dark");
+    }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    if(localStorage.getItem("theme")==="dark"){
+        document.documentElement.setAttribute("data-theme","dark");
+    }
+
+    const searchInput = document.getElementById("searchInput");
+
+    searchInput.addEventListener("keyup", function(){
+
+        const filter = this.value.toLowerCase();
+
+        const sections =
+            document.querySelectorAll("section, details, .card");
+
+        sections.forEach(el => {
+
+            const text =
+                el.textContent.toLowerCase();
+
+            if(text.includes(filter)){
+                el.style.display = "";
+            }else{
+                if(
+                    el.classList.contains("card") ||
+                    el.tagName==="DETAILS"
+                ){
+                    el.style.display = "none";
+                }
+            }
+        });
+    });
+});
+</script>
+
+</body>
+</html>
