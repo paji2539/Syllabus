@@ -3,1017 +3,387 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BUS 100 — Introduction to Contemporary Business | Fall 2026</title>
+<title>BUS 100 · Introduction to Contemporary Business</title>
+<meta name="description" content="BUS 100 – Introduction to Contemporary Business · Fall 2026 course syllabus">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --navy:#0b2140;
-    --ink:#182338;
-    --blue:#0353a5;
-    --blue-dim:#e7effa;
-    --gold:#f0a92e;
-    --gold-dim:#fdf1da;
-    --pink:#d84f8c;
-    --pink-dim:#fbe8f1;
-    --teal:#12897f;
-    --teal-dim:#e1f4f1;
-    --plum:#7457c9;
-    --plum-dim:#ede8fb;
-    --cream:#faf7f1;
-    --paper:#ffffff;
-    --line:#e6e1d6;
-    --text:#241d13;
-    --text-soft:#5b5548;
-    --radius:14px;
-    --display: 'Fraunces', serif;
-    --body: 'Inter', sans-serif;
-    --mono: 'IBM Plex Mono', monospace;
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    font-family:var(--body);
-    background:var(--cream);
-    color:var(--text);
-    -webkit-font-smoothing:antialiased;
-  }
-  a{color:var(--blue);}
-
-  /* ---------- Layout shell ---------- */
-  .shell{
-    display:grid;
-    grid-template-columns: 280px 1fr;
-    min-height:100vh;
-  }
-  @media (max-width: 900px){
-    .shell{grid-template-columns: 1fr;}
-  }
-
-  /* ---------- Sidebar ---------- */
-  .sidebar{
-    position:sticky;
-    top:0;
-    align-self:start;
-    height:100vh;
-    padding:28px 22px;
-    background:var(--navy);
-    color:#eef2f8;
-    display:flex;
-    flex-direction:column;
-    gap:22px;
-    overflow-y:auto;
-  }
-  @media (max-width: 900px){
-    .sidebar{position:relative; height:auto;}
-  }
-  .brand{
-    display:flex;
-    align-items:center;
-    gap:12px;
-  }
-  .brand img{width:46px;height:auto;background:#fff;padding:6px;border-radius:8px;}
-  .brand-text{font-family:var(--mono);font-size:11px;letter-spacing:.08em;line-height:1.5;color:#9fb3d1;text-transform:uppercase;}
-  .brand-text strong{display:block;color:#fff;font-size:13px;letter-spacing:.03em;}
-
-  .nav-rail{
-    position:relative;
-    display:flex;
-    flex-direction:column;
-    gap:2px;
-    padding-left:20px;
-  }
-  .nav-rail::before{
-    content:"";
-    position:absolute;
-    left:6px; top:8px; bottom:8px;
-    width:2px;
-    background:linear-gradient(180deg, var(--blue), var(--gold), var(--pink), var(--teal), var(--plum));
-    opacity:.35;
-    border-radius:2px;
-  }
-  .nav-rail .fill{
-    position:absolute;
-    left:6px; top:8px;
-    width:2px;
-    background:linear-gradient(180deg, var(--blue), var(--gold), var(--pink), var(--teal), var(--plum));
-    border-radius:2px;
-    transition:height .15s ease-out;
-  }
-  .nav-link{
-    position:relative;
-    text-decoration:none;
-    color:#c7d3e6;
-    font-size:13.5px;
-    font-weight:500;
-    padding:9px 10px 9px 16px;
-    border-radius:8px;
-    transition:background .15s, color .15s;
-  }
-  .nav-link::before{
-    content:"";
-    position:absolute;
-    left:-19px; top:50%;
-    transform:translateY(-50%);
-    width:9px;height:9px;
-    border-radius:50%;
-    background:#38466b;
-    border:2px solid var(--navy);
-    z-index:2;
-    transition:background .15s, transform .15s;
-  }
-  .nav-link:hover{background:rgba(255,255,255,.06); color:#fff;}
-  .nav-link.active{background:rgba(255,255,255,.1); color:#fff;}
-  .nav-link.active::before{background:var(--gold); transform:translateY(-50%) scale(1.25);}
-
-  .sidebar-foot{
-    margin-top:auto;
-    font-family:var(--mono);
-    font-size:10.5px;
-    color:#7488ac;
-    line-height:1.6;
-    padding-top:16px;
-    border-top:1px solid rgba(255,255,255,.08);
-  }
-
-  /* ---------- Main ---------- */
-  main{padding:0;}
-  .section{
-    padding:72px 56px;
-    max-width:900px;
-    border-bottom:1px solid var(--line);
-  }
-  @media (max-width: 700px){
-    .section{padding:48px 22px;}
-  }
-  .eyebrow{
-    font-family:var(--mono);
-    font-size:11.5px;
-    letter-spacing:.12em;
-    text-transform:uppercase;
-    font-weight:600;
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    padding:5px 12px;
-    border-radius:20px;
-    margin-bottom:18px;
-  }
-  .eyebrow.blue{background:var(--blue-dim); color:var(--blue);}
-  .eyebrow.gold{background:var(--gold-dim); color:#9a6b0c;}
-  .eyebrow.pink{background:var(--pink-dim); color:var(--pink);}
-  .eyebrow.teal{background:var(--teal-dim); color:var(--teal);}
-  .eyebrow.plum{background:var(--plum-dim); color:var(--plum);}
-
-  h1,h2,h3,h4{font-family:var(--display); font-weight:600; margin:0 0 .5em; color:var(--ink);}
-  .section h2{font-size:22px; font-weight:600; letter-spacing:-.01em;}
-  .section h3{font-size:20px; font-weight:600; margin-top:2em;}
-  .section h4{font-size:16px; font-weight:600; margin-top:1.6em; font-family:var(--body);}
-  p{line-height:1.7; color:var(--text-soft); margin:0 0 1.1em;}
-  .section p:last-child{margin-bottom:0;}
-  ul,ol{line-height:1.7; color:var(--text-soft); padding-left:1.4em;}
-  li{margin-bottom:.5em;}
-  strong{color:var(--ink); font-weight:600;}
-  blockquote{
-    margin:1.2em 0; padding:14px 20px;
-    border-left:3px solid var(--gold);
-    background:var(--gold-dim);
-    border-radius:0 10px 10px 0;
-    font-style:italic; color:var(--text-soft);
-  }
-
-  /* ---------- Hero ---------- */
-  .hero{
-    padding:64px 56px 48px;
-    background:
-      radial-gradient(circle at 85% -10%, rgba(240,169,46,.18), transparent 45%),
-      radial-gradient(circle at 0% 100%, rgba(216,79,140,.12), transparent 40%),
-      var(--paper);
-    border-bottom:1px solid var(--line);
-  }
-  @media (max-width: 700px){ .hero{padding:40px 22px;} }
-  .hero-top{display:none;}
-  .hero-kicker{font-family:var(--mono); font-size:12px; letter-spacing:.1em; color:var(--blue); text-transform:uppercase; font-weight:600;}
-  .hero h1{
-    font-size:22px;
-    line-height:1.05;
-    margin-bottom:.25em;
-  }
-  .hero-meta{
-    display:flex; flex-wrap:wrap; gap:10px;
-    margin:22px 0 40px;
-  }
-  .chip{
-    font-family:var(--mono); font-size:12.5px; font-weight:500;
-    padding:7px 14px; border-radius:20px; border:1px solid var(--line);
-    background:var(--paper); color:var(--text-soft);
-    display:inline-flex; align-items:center; gap:6px;
-  }
-  .chip b{color:var(--ink);}
-
-  .instructor-card{
-    display:flex; gap:22px; align-items:flex-start;
-    background:var(--navy); color:#fff;
-    border-radius:20px; padding:28px 30px;
-    flex-wrap:wrap;
-  }
-  .instructor-card img{
-    width:104px; height:104px; object-fit:cover; border-radius:14px;
-    border:3px solid rgba(255,255,255,.15);
-  }
-  .instructor-info{flex:1; min-width:220px;}
-  .instructor-info .name{font-family:var(--display); font-size:22px; font-weight:600; margin-bottom:2px;}
-  .instructor-info .role{color:#f0a92e; font-family:var(--mono); font-size:12px; letter-spacing:.06em; text-transform:uppercase; margin-bottom:14px;}
-  .idetails{
-    display:grid; grid-template-columns:auto 1fr; gap:6px 16px;
-    font-size:13.5px; color:#cdd8ea;
-  }
-  .idetails dt{font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:.06em; color:#7f93b8; padding-top:2px;}
-  .idetails dd{margin:0; color:#e7ecf5;}
-  .idetails a{color:#8fc0ff;}
-
-  /* ---------- Discipline chips (signature element) ---------- */
-  .discipline-wheel{
-    display:flex; flex-wrap:wrap; gap:10px; margin:28px 0 8px;
-  }
-  .discipline{
-    padding:10px 16px; border-radius:12px; font-size:13.5px; font-weight:600;
-    display:flex; align-items:center; gap:8px;
-    border:1px solid transparent;
-  }
-  .discipline .dot{width:8px;height:8px;border-radius:50%;flex:none;}
-  .d1{background:var(--blue-dim); color:#08386f;}
-  .d1 .dot{background:var(--blue);}
-  .d2{background:var(--gold-dim); color:#7a5308;}
-  .d2 .dot{background:var(--gold);}
-  .d3{background:var(--pink-dim); color:#9c2f61;}
-  .d3 .dot{background:var(--pink);}
-  .d4{background:var(--teal-dim); color:#0b5a53;}
-  .d4 .dot{background:var(--teal);}
-  .d5{background:var(--plum-dim); color:#4a3690;}
-  .d5 .dot{background:var(--plum);}
-  .d6{background:#fbe9e3; color:#9c3d16;}
-  .d6 .dot{background:#e0682f;}
-  .d7{background:#e9f3d8; color:#4c6b12;}
-  .d7 .dot{background:#7ba62c;}
-
-  /* ---------- Cards / callouts ---------- */
-  .card{
-    background:var(--paper); border:1px solid var(--line); border-radius:var(--radius);
-    padding:24px 26px; margin:20px 0;
-  }
-  .card.accent-blue{border-left:4px solid var(--blue);}
-  .card.accent-gold{border-left:4px solid var(--gold);}
-  .card.accent-pink{border-left:4px solid var(--pink);}
-  .card.accent-teal{border-left:4px solid var(--teal);}
-  .card.accent-plum{border-left:4px solid var(--plum);}
-
-  .lg-grid{display:grid; gap:14px; margin-top:20px;}
-  .lg-item{
-    background:var(--paper); border:1px solid var(--line); border-radius:12px;
-    padding:18px 20px; display:grid; grid-template-columns:70px 1fr; gap:16px; align-items:start;
-  }
-  .lg-tag{
-    font-family:var(--mono); font-weight:700; font-size:13px;
-    color:#fff; background:var(--blue); border-radius:8px; padding:5px 0; text-align:center; height:fit-content;
-  }
-  .lg-item:nth-child(2) .lg-tag{background:var(--gold); color:#4a3200;}
-  .lg-item:nth-child(3) .lg-tag{background:var(--pink);}
-  .lg-item:nth-child(4) .lg-tag{background:var(--teal);}
-  .lg-item:nth-child(5) .lg-tag{background:var(--plum);}
-  .lg-item:nth-child(6) .lg-tag{background:#e0682f;}
-  .lg-item p{margin:0 0 6px;}
-  .lg-item p:last-child{margin:0;}
-  .lg-item .lg-title{color:var(--ink); font-weight:700; margin:0 0 4px;}
-
-  .commit-cols{display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:20px;}
-  @media (max-width:700px){.commit-cols{grid-template-columns:1fr;}}
-  .commit-col{background:var(--paper); border:1px solid var(--line); border-radius:var(--radius); padding:22px 24px;}
-  .commit-col h4{margin-top:0;}
-  .commit-col.students{border-top:4px solid var(--blue);}
-  .commit-col.instructor{border-top:4px solid var(--gold);}
-
-  /* ---------- Tables ---------- */
-  table{width:100%; border-collapse:collapse; margin:18px 0; font-size:14px;}
-  th,td{text-align:left; padding:11px 14px; border-bottom:1px solid var(--line);}
-  th{font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:.05em; color:var(--text-soft); background:var(--cream);}
-  td{color:var(--text-soft);}
-  td b, td strong{color:var(--ink);}
-  .totalrow td{font-weight:700; color:var(--ink); border-top:2px solid var(--ink); background:var(--gold-dim);}
-
-  .scale-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:18px 0;}
-  @media (max-width:600px){.scale-grid{grid-template-columns:1fr 1fr;}}
-  .scale-cell{
-    background:var(--paper); border:1px solid var(--line); border-radius:10px;
-    padding:10px 14px; display:flex; justify-content:space-between; align-items:center; font-size:13.5px;
-  }
-  .grade-letter{font-family:var(--display); font-weight:700; font-size:17px; color:var(--blue);}
-
-  /* ---------- Accordion (policies) ---------- */
-  .accordion-item{
-    border:1px solid var(--line); border-radius:12px; margin-bottom:12px; overflow:hidden; background:var(--paper);
-  }
-  .accordion-head{
-    display:flex; justify-content:space-between; align-items:center; gap:12px;
-    padding:16px 20px; cursor:pointer; user-select:none;
-    font-weight:600; color:var(--ink); font-size:15px;
-  }
-  .accordion-head:hover{background:var(--cream);}
-  .accordion-head .plus{
-    font-family:var(--mono); font-size:18px; color:var(--blue); transition:transform .2s; flex:none;
-  }
-  .accordion-item.open .accordion-head .plus{transform:rotate(45deg);}
-  .accordion-body{
-    max-height:0; overflow:hidden; transition:max-height .3s ease;
-    padding:0 20px;
-  }
-  .accordion-item.open .accordion-body{padding:0 20px 20px;}
-  .accordion-body p, .accordion-body ul{font-size:14.5px;}
-
-  /* ---------- Grade calculator ---------- */
-  .calc{
-    background:var(--navy); border-radius:20px; padding:30px 32px; color:#fff; margin-top:28px;
-  }
-  .calc h3{color:#fff; margin-top:0;}
-  .calc p.lead{color:#b9c6de; font-size:14px;}
-  .calc-grid{display:grid; grid-template-columns:1fr 1fr; gap:14px 22px; margin:22px 0;}
-  @media (max-width:600px){.calc-grid{grid-template-columns:1fr;}}
-  .calc-field{display:flex; flex-direction:column; gap:6px;}
-  .calc-field label{font-family:var(--mono); font-size:11.5px; text-transform:uppercase; letter-spacing:.05em; color:#93a5c6; display:flex; justify-content:space-between;}
-  .calc-field input[type=range]{accent-color:var(--gold); width:100%;}
-  .calc-field .val{color:#fff; font-weight:600;}
-  .calc-result{
-    display:flex; align-items:center; justify-content:space-between; gap:20px;
-    background:rgba(255,255,255,.06); border-radius:14px; padding:20px 24px; margin-top:10px; flex-wrap:wrap;
-  }
-  .calc-result .score{font-family:var(--display); font-size:40px; font-weight:700; color:var(--gold);}
-  .calc-result .letter{font-family:var(--display); font-size:40px; font-weight:700;}
-  .calc-result .meta{font-family:var(--mono); font-size:12px; color:#93a5c6;}
-  .calc-note{font-size:12px; color:#7f93b8; margin-top:14px;}
-
-  /* ---------- Timeline (schedule) ---------- */
-  .timeline{position:relative; margin-top:32px; padding-left:36px;}
-  .timeline::before{
-    content:""; position:absolute; left:9px; top:6px; bottom:6px; width:2px;
-    background:linear-gradient(180deg,var(--blue),var(--gold),var(--pink),var(--teal),var(--plum));
-    opacity:.4; border-radius:2px;
-  }
-  .t-item{position:relative; margin-bottom:22px;}
-  .t-dot{
-    position:absolute; left:-36px; top:4px; width:20px; height:20px; border-radius:50%;
-    background:var(--paper); border:3px solid var(--blue); display:flex; align-items:center; justify-content:center;
-    font-family:var(--mono); font-size:9px; font-weight:700; color:var(--blue);
-  }
-  .t-card{background:var(--paper); border:1px solid var(--line); border-radius:12px; padding:16px 20px;}
-  .t-week{font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:.06em; color:var(--blue); font-weight:700; margin-bottom:4px;}
-  .t-topic{font-weight:700; color:var(--ink); margin-bottom:6px; font-size:15px;}
-  .t-readings{font-size:13.5px; color:var(--text-soft); line-height:1.6;}
-  .t-flag{
-    display:inline-block; margin-top:8px; font-size:12px; font-weight:700; color:#fff;
-    background:var(--pink); padding:4px 10px; border-radius:20px;
-  }
-
-  /* ---------- Misc ---------- */
-  .divider-note{
-    font-size:13px; color:var(--text-soft); font-style:italic; margin-top:6px;
-  }
-  .footer{
-    padding:48px 56px 80px; color:var(--text-soft); font-size:13px; line-height:1.7;
-  }
-  .back-top{
-    display:inline-flex; align-items:center; gap:6px; font-family:var(--mono); font-size:12px;
-    color:var(--blue); text-decoration:none; margin-top:26px;
-  }
-  .mobile-nav-toggle{display:none;}
-  @media (max-width:900px){
-    .mobile-nav-toggle{
-      display:block; position:fixed; top:16px; right:16px; z-index:50;
-      background:var(--navy); color:#fff; border:none; border-radius:10px; width:44px; height:44px;
-      font-size:18px; cursor:pointer;
-    }
-    .sidebar{display:none;}
-    .sidebar.open{display:flex;}
-  }
+:root{
+  --ink:#14213D;--ink-soft:#3D4A6B;--paper:#FFFFFF;--paper-alt:#F4F3EF;
+  --paper-line:#DEDCD3;--ledger:#157F5A;--ledger-soft:#E4F2EC;
+  --gold:#B5790C;--gold-bg:#FBF0D9;--coral:#C7412F;--coral-bg:#FBE7E2;
+  --font-display:'Space Grotesk',sans-serif;--font-body:'IBM Plex Sans',sans-serif;
+  --font-mono:'IBM Plex Mono',monospace;--rail-w:280px;
+}
+*{box-sizing:border-box} html,body{height:100%}
+body{margin:0;font-family:var(--font-body);color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--font-display);font-weight:700;margin:0} button{font-family:var(--font-body)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+.app{display:flex;height:100vh;overflow:hidden}
+.ledger-rail{width:var(--rail-w);flex:0 0 var(--rail-w);background:var(--ink);color:#fff;padding:28px 22px 20px;overflow-y:auto;display:flex;flex-direction:column}
+.ledger-head{font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;color:#9CA9CC;text-transform:uppercase;border-bottom:1px dashed #3D4A6B;padding-bottom:14px;margin-bottom:6px}
+.ledger-head b{display:block;font-family:var(--font-display);font-size:16px;color:#fff;letter-spacing:0;margin-top:6px;text-transform:none}
+.ledger-list{list-style:none;margin:0;padding:0;flex:1}
+.ledger-item{width:100%;text-align:left;background:none;border:none;color:#C7CEE0;padding:10px 0;display:flex;align-items:baseline;gap:8px;cursor:pointer;border-bottom:1px dotted #2A3455;font-size:13px}
+.ledger-item .li-num{font-family:var(--font-mono);color:#6C7BA6;flex:0 0 20px}
+.ledger-item .li-label{flex:1;line-height:1.35}.ledger-item .li-min{font-family:var(--font-mono);color:#6C7BA6;font-size:11px}
+.ledger-item.visited .li-num{color:var(--ledger)}.ledger-item.visited .li-label::after{content:" ✓";color:var(--ledger)}
+.ledger-item.current{color:#fff}.ledger-item.current .li-label{font-weight:600}
+.ledger-item.current{background:#1E2A4D;margin:0 -22px;padding-left:22px;padding-right:22px;border-radius:6px}
+.ledger-item:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.ledger-total{font-family:var(--font-mono);font-size:12px;color:#9CA9CC;border-top:1px dashed #3D4A6B;margin-top:10px;padding-top:14px;display:flex;justify-content:space-between}
+.ledger-total b{color:#fff}
+.rail-toggle{display:none;position:fixed;top:14px;left:14px;z-index:40;width:40px;height:40px;border-radius:8px;border:none;background:var(--ink);color:#fff;font-size:18px;cursor:pointer}
+.stage{flex:1;display:flex;flex-direction:column;min-width:0;height:100vh}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:16px 40px;border-bottom:1px solid var(--paper-line);flex:0 0 auto}
+.clock{font-family:var(--font-mono);font-size:14px;color:var(--ink-soft)}.clock .target{color:#A9AEC2}
+.objective-pill{font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;background:var(--paper-alt);border:1px solid var(--paper-line);border-radius:999px;padding:6px 14px;color:var(--ink-soft)}
+.viewport{flex:1;overflow-y:auto;position:relative}
+.slide{display:none;min-height:100%;padding:48px 56px 40px;max-width:980px;margin:0 auto}
+.slide.active{display:block;animation:rise .35s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.kicker{font-family:var(--font-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ledger);margin-bottom:10px}
+.h1{font-size:38px;line-height:1.1;margin-bottom:18px}.lede{font-size:18px;line-height:1.6;color:var(--ink-soft);max-width:760px;margin-bottom:8px}
+.controls{flex:0 0 auto;display:flex;align-items:center;justify-content:space-between;padding:16px 40px 22px;border-top:1px solid var(--paper-line)}
+.nav-btn{font-family:var(--font-display);font-weight:700;font-size:14px;border:1.5px solid var(--ink);background:var(--paper);color:var(--ink);padding:12px 22px;border-radius:8px;cursor:pointer;transition:background .15s,color .15s,transform .1s}
+.nav-btn:hover:not(:disabled){background:var(--ink);color:#fff}.nav-btn:active:not(:disabled){transform:scale(.97)}
+.nav-btn:disabled{opacity:.3;cursor:not-allowed}.nav-btn.primary{background:var(--ledger);border-color:var(--ledger);color:#fff}
+.nav-btn.primary:hover{background:#0F6647}.dots{display:flex;gap:6px}.dot{width:7px;height:7px;border-radius:50%;background:var(--paper-line)}
+.dot.active{background:var(--ledger);width:20px;border-radius:4px}*:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.stat-box{font-family:var(--font-mono);background:var(--paper-alt);border:1px solid var(--paper-line);border-radius:10px;padding:20px 24px;font-size:18px;margin:20px 0;display:block}
+.grid{display:grid;gap:16px;margin:22px 0}.grid-2{grid-template-columns:1fr 1fr}.grid-3{grid-template-columns:repeat(3,1fr)}.grid-4{grid-template-columns:repeat(4,1fr)}
+.card{background:var(--paper);border:1px solid var(--paper-line);border-radius:10px;padding:18px}.card h3{font-size:16px;margin-bottom:6px}.card p{font-size:14px;color:var(--ink-soft);margin:0;line-height:1.5}
+.hook-card{background:var(--paper-alt);border:1px solid var(--paper-line);border-radius:12px;padding:24px}.hook-card .tag{font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold)}
+.hook-card h3{font-size:20px;margin:6px 0 8px}.hook-card p{font-size:14px;color:var(--ink-soft);line-height:1.55;margin:0}
+.reveal-card{background:var(--paper);border:1px solid var(--paper-line);border-radius:10px;padding:18px;cursor:pointer;text-align:left;width:100%}
+.reveal-card h3{font-size:15px;display:flex;justify-content:space-between;align-items:center}.reveal-card .plus{font-family:var(--font-mono);color:var(--ledger);font-size:18px}
+.reveal-card .ans{display:none;font-size:13px;color:var(--ink-soft);margin-top:10px;padding-top:10px;border-top:1px dashed var(--paper-line);line-height:1.5}
+.reveal-card.open .ans{display:block}.reveal-card.open .plus{transform:rotate(45deg);display:inline-block}
+.activity{background:var(--coral-bg);border:1px solid var(--coral);border-radius:10px;padding:18px 20px;margin:22px 0}
+.activity .tag{font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--coral)}
+.activity p{font-size:14px;margin:8px 0;color:#5C2A21;line-height:1.5}
+.term-chip{display:inline-block;font-family:var(--font-mono);font-size:12px;background:var(--paper-alt);border:1px solid var(--paper-line);border-radius:999px;padding:6px 12px;margin:0 6px 8px 0;color:var(--ink-soft)}
+.data-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px}.data-table th,.data-table td{padding:11px 12px;border-bottom:1px solid var(--paper-line);text-align:left}
+.data-table th{font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:.07em;background:var(--paper-alt)}
+.data-table td:last-child,.data-table th:last-child{text-align:right}.total-row td{font-weight:700;border-top:2px solid var(--ink)}
+.scale{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px}.scale span{padding:9px 10px;background:var(--paper-alt);border:1px solid var(--paper-line);border-radius:7px;font-family:var(--font-mono);font-size:12px}
+ul.clean{padding-left:20px;color:var(--ink-soft);line-height:1.65;font-size:14px}ol.clean{padding-left:24px;color:var(--ink-soft);line-height:1.65;font-size:14px}
+.schedule-wrap{overflow-x:auto}.schedule-wrap .data-table{min-width:720px}
+.small{font-size:13px!important}.muted{color:var(--ink-soft)}
+@media(max-width:860px){
+  .ledger-rail{position:fixed;top:0;bottom:0;left:0;transform:translateX(-100%);transition:transform .25s;z-index:35;box-shadow:2px 0 20px rgba(0,0,0,.2);padding-top:70px}
+  .ledger-rail.open{transform:translateX(0)}.rail-toggle{display:block}.slide{padding:70px 24px 30px}
+  .topbar{padding:14px 20px 14px 64px}.controls{padding:14px 20px 18px}.h1{font-size:28px}
+  .grid-2,.grid-3,.grid-4,.scale{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
 </style>
 </head>
 <body>
+<button class="rail-toggle" id="railToggle" aria-label="Toggle course navigation" aria-expanded="false">≡</button>
+<div class="app">
+  <aside class="ledger-rail" id="ledgerRail" aria-label="Course syllabus navigation">
+    <div class="ledger-head">BUS 100 · Fall 2026<b>Course Syllabus</b></div>
+    <ul class="ledger-list" id="ledgerList"></ul>
+    <div class="ledger-total"><span>Course</span><b>3 credit hours</b></div>
+  </aside>
 
-<button class="mobile-nav-toggle" id="navToggle">☰</button>
+  <main class="stage">
+    <header class="topbar">
+      <div class="clock" id="clock">Fall 2026 <span class="target">/ BUS 100</span></div>
+      <div class="objective-pill" id="objectivePill">Course Overview</div>
+    </header>
 
-<div class="shell">
-  <nav class="sidebar" id="sidebar">
-    <div class="brand">
-      <img src="data:image/png;base64,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" alt="Indiana State University, Scott College of Business logo">
-      <div class="brand-text"><strong>BUS 100</strong>Contemporary Business</div>
+    <div class="viewport" id="viewport">
+
+      <section class="slide" data-idx="0">
+        <div class="kicker">BUS 100 · Fall 2026</div>
+        <h1 class="h1">Introduction to Contemporary Business</h1>
+        <p class="lede">A first-year introduction to contemporary business, the Scott College of Business, professional development, teamwork, and career exploration.</p>
+        <div class="hook-card" style="margin-top:28px;">
+          <div class="tag">Course at a glance</div>
+          <h3>3 Credit Hours · Tuesday/Thursday · 9:30–10:45 am · Federal Hall #0009</h3>
+          <p style="margin-top:12px"><b>Instructor:</b> Jin Park, Ph.D. · Federal Hall #116 · (812) 237-9036 · jin.park@indstate.edu</p>
+          <p style="margin-top:8px"><b>Office hours:</b> Monday–Thursday, 2:00–4:00 pm, or by appointment.</p>
+        </div>
+        <button class="nav-btn primary" id="beginBtn" style="margin-top:22px;">Explore syllabus →</button>
+      </section>
+
+      <section class="slide" data-idx="1">
+        <div class="kicker">Course information</div><h1 class="h1">What is BUS 100?</h1>
+        <p class="lede">This course introduces first-year students to contemporary business and helps them build connections within the Scott College of Business.</p>
+        <div class="grid grid-2">
+          <div class="card"><h3>Catalog description</h3><p>Students survey business disciplines and contemporary issues, begin career development, learn team-building skills, and explore career-enriching experiences such as internships and study abroad. The course is not open to juniors or seniors in the College of Business.</p></div>
+          <div class="card"><h3>Business disciplines</h3><p>Accounting, finance, insurance and risk management, marketing, supply chain management, management, and human resource management.</p></div>
+        </div>
+        <div class="stat-box">Required: <b>Better Business, 7th ed.</b> by Michael R. Solomon, Mary Anne Poatsy, and Kendall Martin.<br><span class="small muted">e-Textbook ISBN 978-0-13-543522-9 · Print ISBN 978-0-13-543504-5</span></div>
+        <p class="small muted">Recommended: selected articles, reports, and media available via Canvas.</p>
+      </section>
+
+      <section class="slide" data-idx="2">
+        <div class="kicker">Course overview</div><h1 class="h1">Why this course matters</h1>
+        <p class="lede">BUS 100 connects foundational business knowledge with academic success, professional development, and career decision-making.</p>
+        <div class="grid grid-2">
+          <div class="card"><h3>Build business knowledge</h3><p>Understand how organizations create value and address challenges in today's global and technology-driven environment.</p></div>
+          <div class="card"><h3>Explore your direction</h3><p>Identify the business major and career path that align with your interests, strengths, and goals.</p></div>
+          <div class="card"><h3>Develop professionally</h3><p>Assess skills, build teamwork and communication abilities, explore ethical business practices, and analyze emerging technologies such as artificial intelligence.</p></div>
+          <div class="card"><h3>Gain experience</h3><p>Experiential learning opportunities, including internships and study abroad, support academic and career readiness.</p></div>
+        </div>
+      </section>
+
+      <section class="slide" data-idx="3">
+        <div class="kicker">Learning objectives</div><h1 class="h1">What you should be able to do</h1>
+        <p class="lede">Upon successful completion of BUS 100, students will be able to:</p>
+        <ol class="clean">
+          <li>Apply academic success strategies and university resources to support personal responsibility, academic achievement, and degree completion.</li>
+          <li>Develop an initial academic and career plan by identifying personal strengths, interests, business majors, and professional opportunities.</li>
+          <li>Demonstrate professional behaviors and effective communication skills appropriate for academic, business, and workplace settings.</li>
+          <li>Apply critical thinking, decision-making, and digital technologies, including artificial intelligence, to analyze business and professional situations.</li>
+          <li>Explain the roles and interrelationships of the major business disciplines and their contributions to organizational success.</li>
+          <li>Explain how economic, technological, ethical, social, cultural, and global factors influence business decisions and organizational performance.</li>
+        </ol>
+      </section>
+
+      <section class="slide" data-idx="4">
+        <div class="kicker">College of Business learning goals</div><h1 class="h1">How BUS 100 supports SCOB goals</h1>
+        <div class="grid grid-2">
+          <div class="card"><h3>LG1 · Current business concepts</h3><p>Readings, discussions, guest speakers, and applied activities build foundational knowledge.</p></div>
+          <div class="card"><h3>LG2 · Internal & external influences</h3><p>Students examine economic, social, cultural, technological, political, legal, and global influences on business practices.</p></div>
+          <div class="card"><h3>LG3 · Problem solving & technology</h3><p>Students apply technology and decision-making frameworks, including digital tools and artificial intelligence.</p></div>
+          <div class="card"><h3>LG4 · Business ethics</h3><p>Case studies, discussions, and real-world examples explore ethical dimensions of business decisions.</p></div>
+          <div class="card"><h3>LG5 · Communication</h3><p>Students practice writing, presentations, teamwork, classroom discussion, classroom activity, and networking.</p></div>
+          <div class="card"><h3>LG6 · Workplace expectations</h3><p>Professional expectations and behaviors are practiced throughout the semester.</p></div>
+        </div>
+      </section>
+
+      <section class="slide" data-idx="5">
+        <div class="kicker">Our shared commitment</div><h1 class="h1">A productive learning environment</h1>
+        <p class="lede">Creating a positive and productive learning environment is a shared responsibility between students and the instructor.</p>
+        <div class="grid grid-2">
+          <div class="card"><h3>Students commit to</h3><ol class="clean"><li>Understanding and following course expectations.</li><li>Participating actively, respectfully, and professionally.</li><li>Taking responsibility for preparation, attendance, time management, deadlines, and engagement.</li><li>Demonstrating initiative and accountability.</li><li>Upholding academic integrity and respectful communication.</li><li>Exercising sound judgment and professionalism.</li></ol></div>
+          <div class="card"><h3>Instructor commits to</h3><ol class="clean"><li>Creating a supportive, inclusive, and engaging environment.</li><li>Providing timely access to materials, resources, and academic support.</li><li>Preparing thoroughly for meaningful learning experiences.</li><li>Grading fairly with timely, constructive feedback.</li><li>Treating students with respect, fairness, and consistency.</li><li>Maintaining high ethical standards and seeking feedback to improve the course.</li></ol></div>
+        </div>
+      </section>
+
+      <section class="slide" data-idx="6">
+        <div class="kicker">Grading</div><h1 class="h1">How your grade is calculated</h1>
+        <table class="data-table">
+          <thead><tr><th>Course component</th><th>Points</th></tr></thead>
+          <tbody>
+            <tr><td>Interactive Reading Assignments</td><td>200</td></tr>
+            <tr><td>Assignments</td><td>170</td></tr>
+            <tr><td>Chapter Quizzes</td><td>200</td></tr>
+            <tr><td>Professional Developments</td><td>130</td></tr>
+            <tr><td>Final Exam</td><td>100</td></tr>
+            <tr class="total-row"><td>Total</td><td>800</td></tr>
+          </tbody>
+        </table>
+        <p class="small muted">Attendance is handled as a bonus: up to 40 additional points, according to the attendance policy.</p>
+        <div class="activity"><div class="tag">Letter-grade scale</div>
+          <div class="scale">
+            <span>A+ ≥ 97.5%</span><span>A ≥ 93.0%</span><span>A- ≥ 90.0%</span>
+            <span>B+ ≥ 87.5%</span><span>B ≥ 82.0%</span><span>B- ≥ 79.5%</span>
+            <span>C+ ≥ 77.0%</span><span>C ≥ 71.0%</span><span>C- ≥ 69.0%</span>
+            <span>D+ ≥ 66.0%</span><span>D ≥ 60.5%</span><span>D- ≥ 59.0%</span>
+          </div><p style="margin-top:12px">F &lt; 59.0%</p>
+        </div>
+      </section>
+
+      <section class="slide" data-idx="7">
+        <div class="kicker">Assignments</div><h1 class="h1">Reading, applied learning & quizzes</h1>
+        <div class="grid grid-2">
+          <div class="card"><h3>Interactive Reading Assignments · 200 pts</h3><p>11 Pearson MyLab assignments, 20 points each. The lowest score is dropped, resulting in 200 points.</p></div>
+          <div class="card"><h3>Assignments · 170 pts</h3><p>Professional development and applied learning activities in Pearson MyLab, including simulations, case analyses, and media-based assignments.</p></div>
+          <div class="card"><h3>Chapter Quizzes · 200 pts</h3><p>11 quizzes, 20 points each, with the lowest score dropped. Each quiz has 25 true/false and multiple-choice questions in 50 minutes. Two attempts are allowed; the higher score counts.</p></div>
+          <div class="card"><h3>Professional Development · 130 pts</h3><p>Activities support academic, career, and personal growth; exploration of business careers; assessment of interests, strengths, and skills; and informed major and career decisions.</p></div>
+        </div>
+        <div class="stat-box">Final Exam · <b>100 points</b><br><span class="small muted">Comprehensive case analyses, short-answer, and essay questions. No makeup test unless pre-arranged due to an unexpected circumstance.</span></div>
+      </section>
+
+      <section class="slide" data-idx="8">
+        <div class="kicker">Grading policies</div><h1 class="h1">Submission standards</h1>
+        <ul class="clean">
+          <li>Submit written assignments through the designated Canvas or Pearson MyLab link, following the specific instructions.</li>
+          <li>Proofread work and submit it in an appropriate format such as Microsoft Word, Excel, or PDF.</li>
+          <li>Use a consistent citation style whenever necessary.</li>
+          <li>Every written assignment must include the preparation date, course number/title, assignment title, and your name. Each missing or incomplete required item results in a 5% deduction; submissions missing all required items receive a 20% deduction.</li>
+          <li>Late assignments receive a 2% penalty per day and will not be accepted seven days after the due date unless an extraordinary circumstance is documented and approved.</li>
+          <li>Plagiarism in a written assignment results in a zero and may be reported to the university.</li>
+          <li>Assignments are expected to be graded within seven business days. If grading is not completed within seven business days and students are not informed of a delay with a definite completion date, a complete, timely, requirement-compliant submission receives full credit.</li>
+        </ul>
+      </section>
+
+      <section class="slide" data-idx="9">
+        <div class="kicker">Attendance</div><h1 class="h1">Attendance bonus</h1>
+        <p class="lede">Students are expected to attend all class sessions and arrive on time. Attendance is monitored and can add up to 40 points to the final course points.</p>
+        <div class="grid grid-3">
+          <div class="card"><h3>No absences</h3><p><b>40 bonus points.</b></p></div>
+          <div class="card"><h3>Excused absence</h3><p>Beginning with the second excused absence, the bonus decreases by 4 points for each excused absence.</p></div>
+          <div class="card"><h3>Unexcused absence</h3><p>Beginning with the first unexcused absence, the bonus decreases by 8 points for each unexcused absence, starting with the second class.</p></div>
+        </div>
+        <div class="activity"><div class="tag">Important details</div><p>Each late arrival or early departure deducts 1 point. Once all 40 bonus points are forfeited, no additional attendance deductions apply and the bonus cannot fall below 0. University- or instructor-canceled classes count as full attendance.</p><p>To have an absence classified as excused, submit written documentation within one week. The instructor reviews and approves the documentation.</p></div>
+      </section>
+
+      <section class="slide" data-idx="10">
+        <div class="kicker">Course policies</div><h1 class="h1">Academic integrity, communication & technology</h1>
+        <div class="grid grid-2">
+          <div class="card"><h3>Academic integrity</h3><p>Students are responsible for understanding plagiarism and Indiana State University academic integrity policies. Academic dishonesty in written assignments, quizzes, or the final exam may result in an F for the course. Plagiarism in a written assignment results in zero; plagiarism by a group member can result in zero for the group assignment when other members do not complete plagiarism.</p></div>
+          <div class="card"><h3>Communication</h3><p>Canvas Inbox is the official means of individualized communication. Class announcements may be made in class or through Canvas, and an announcement made in one location is not guaranteed to be repeated in the other. Weekday messages are normally answered within 24 hours; Friday, holiday-eve, weekend, and holiday messages may be answered the following Monday or business day.</p></div>
+          <div class="card"><h3>Laptops & technology</h3><p>Students are responsible for having the necessary equipment, including audio/video capability, to participate fully. Devices may be used for class-related purposes only. The instructor may ask students to close devices and actively participate in class activities.</p></div>
+          <div class="card"><h3>Technology & writing help</h3><p>Notify the instructor promptly about technology issues. ISU OIT provides self-help resources and the OIT Knowledge Base. OIT Help Desk: 812-237-2910 or 888-818-5465; IT-Help@indstate.edu. The ISU Writing Center is on the second floor of Cunningham Memorial Library and provides writing assistance.</p></div>
+        </div>
+      </section>
+
+      <section class="slide" data-idx="11">
+        <div class="kicker">University policies & support</div><h1 class="h1">Your responsibilities and available support</h1>
+        <div class="grid grid-2">
+          <div class="card"><h3>The Sycamore Standard</h3><p>Students are expected to practice personal and academic integrity, pursue truth and scholarship, foster an environment conducive to accomplishment, avoid bigotry and intolerance, respect individual rights and human dignity, and conduct themselves in a manner that brings honor to the University community.</p></div>
+          <div class="card"><h3>Academic freedom</h3><p>Indiana State subscribes to AAUP guidelines on academic freedom and faculty duties and responsibilities, including accuracy, appropriate restraint, respect for others' opinions, and clarity that faculty do not necessarily speak for the institution.</p></div>
+          <div class="card"><h3>Non-discrimination & Title IX</h3><p>Indiana State University Policy 923 prohibits discrimination based on protected characteristics and prohibits sex discrimination under Title IX, including sexual harassment and related forms of misconduct. Reports may be made to Equal Opportunity & Title IX at 812-237-8954, Rankin Hall 426, or ISU-equalopportunity-titleix@mail.indstate.edu.</p></div>
+          <div class="card"><h3>Confidential resources</h3><p>ISU Student Counseling Center: 812-237-3939; Victim Advocate: 812-237-3829; UAP Clinic/ISU Health Center: 812-237-3883.</p></div>
+          <div class="card"><h3>Sycamores Care</h3><p>Students, faculty, staff, employers, and family members may make referrals; anonymous and self-referrals are accepted. Contact ISU-DeanOfStudents@mail.indstate.edu or 812-237-3829.</p></div>
+          <div class="card"><h3>Disability accommodations</h3><p>Students seeking accommodation should meet with the instructor and register with Disabled Student Services within the Center for Student Success. Center contact: 812-237-2301, second floor Gillum Hall.</p></div>
+        </div>
+      </section>
+
+      <section class="slide" data-idx="12">
+        <div class="kicker">Explore SCOB majors</div><h1 class="h1">Your next step may be a major</h1>
+        <p class="lede">The syllabus identifies faculty contacts for exploring majors, minors, and related certificate programs.</p>
+        <div class="grid grid-3">
+          <div class="card"><h3>Accounting</h3><p>Department of Accounting, Finance, Insurance and Risk Management (AFIRM). Contact Dr. Cory Campbell · joe.sanders@indstate.edu.</p></div>
+          <div class="card"><h3>Finance</h3><p>Contact Dr. Mengying Wang · mengying.wang@indstate.edu.</p></div>
+          <div class="card"><h3>Financial Planning</h3><p>Finance concentration contact: Mr. Matt Cohen · matt.chhoen@indstate.edu.</p></div>
+          <div class="card"><h3>Insurance & Risk Management</h3><p>Contact Dr. Jin Park · jin.park@indstate.edu.</p></div>
+          <div class="card"><h3>Supply Chain</h3><p>Department of Marketing and Operations. Contact Dr. Concetta DePaolo · Concetta.DePaolo@indstate.edu.</p></div>
+          <div class="card"><h3>Marketing & Sales</h3><p>Contact Dr. David Flemming · David.Fleming@indstate.edu.</p></div>
+          <div class="card"><h3>Management</h3><p>Department of Management and Human Resource. Contact Dr. Aruna Chandra · Aruna.Chandrasekaran@indstate.edu.</p></div>
+          <div class="card"><h3>Human Resources</h3><p>Contact Dr. Alina Waite · Alina.Waite@indstate.edu.</p></div>
+        </div>
+      </section>
+
+      <section class="slide" data-idx="13">
+        <div class="kicker">Schedule of assignments</div><h1 class="h1">Fall 2026 course roadmap</h1>
+        <p class="lede">The syllabus notes that this schedule/topic is tentative and subject to change.</p>
+        <div class="schedule-wrap">
+          <table class="data-table">
+            <thead><tr><th>Week</th><th>Topic</th><th>Assigned readings / assignments</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>Introduction</td><td>Syllabus, Canvas Course Site / MyLab*</td></tr>
+              <tr><td>2</td><td>Basics of Business</td><td>Chapter 1: Business Basics / MyLab*</td></tr>
+              <tr><td>3</td><td>Basics of Economics</td><td>Chapter 2: Economics / MyLab*</td></tr>
+              <tr><td>4</td><td>Ethics & Social Responsibilities</td><td>Chapter 3: Ethics in Business / MyLab*</td></tr>
+              <tr><td>5</td><td>Globalization</td><td>Chapter 4: Business in a Global Economy / MyLab*</td></tr>
+              <tr><td>6</td><td>Business Structures</td><td>Chapter 6: Forms of Business Ownership / MyLab*</td></tr>
+              <tr><td>7</td><td>Open</td><td>—</td></tr>
+              <tr><td>8</td><td>Management</td><td>Chapter 7: Business Management and Organization / MyLab*</td></tr>
+              <tr><td>9</td><td>Talent Management</td><td>Chapter 9: Human Resource Management / MyLab*</td></tr>
+              <tr><td>10</td><td>E-Commerce</td><td>Chapter 10: Online Business and Technology / MyLab*</td></tr>
+              <tr><td>11</td><td>Operations</td><td>Chapter 11: Production, Operations, and Supply Chain Management / MyLab*</td></tr>
+              <tr><td>12</td><td>Marketing</td><td>Chapter 12: Marketing and Consumer Behavior / MyLab*</td></tr>
+              <tr><td>12</td><td>Risk Management</td><td>Risk Management</td></tr>
+              <tr><td>14</td><td>Accounting and Finance</td><td>Chapter 15: Financing and Accounting for Business Operations / MyLab*</td></tr>
+              <tr><td>15</td><td>Thanksgiving Break</td><td>—</td></tr>
+              <tr><td>16</td><td>Study Week</td><td>Chapter 15 continued, if necessary</td></tr>
+              <tr><td>Final</td><td>Final Exam</td><td>Comprehensive final exam</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="slide" data-idx="14">
+        <div class="kicker">Contact & closing</div><h1 class="h1">Keep this syllabus handy</h1>
+        <p class="lede">The syllabus is your reference point for course expectations, grading, attendance, policies, and the tentative schedule.</p>
+        <div class="grid grid-2">
+          <div class="card"><h3>Instructor</h3><p><b>Jin Park, Ph.D.</b><br>Federal Hall #116<br>(812) 237-9036<br>jin.park@indstate.edu</p></div>
+          <div class="card"><h3>Office hours</h3><p>Monday–Thursday, 2:00–4:00 pm, or by appointment.</p></div>
+        </div>
+        <div class="activity" style="background:var(--ledger-soft);border-color:var(--ledger)">
+          <div class="tag" style="color:var(--ledger)">Remember</div>
+          <p style="color:#0F6647">Read the syllabus carefully, monitor Canvas and MyLab, meet deadlines, participate professionally, and ask questions when you need help.</p>
+        </div>
+        <p class="small muted">Source: BUS 100 – Introduction to Contemporary Business syllabus, Fall 2026.</p>
+      </section>
+
     </div>
 
-    <div class="nav-rail" id="navRail">
-      <div class="fill" id="navFill"></div>
-      <a class="nav-link" href="#home" data-sec="home">Course Home</a>
-      <a class="nav-link" href="#overview" data-sec="overview">Overview &amp; Materials</a>
-      <a class="nav-link" href="#objectives" data-sec="objectives">Learning Objectives</a>
-      <a class="nav-link" href="#commitment" data-sec="commitment">Our Shared Commitment</a>
-      <a class="nav-link" href="#grading" data-sec="grading">Grading &amp; Grade Calculator</a>
-      <a class="nav-link" href="#assignments" data-sec="assignments">Assignments &amp; Exams</a>
-      <a class="nav-link" href="#policies" data-sec="policies">Course Policies</a>
-      <a class="nav-link" href="#university" data-sec="university">University Policies</a>
-      <a class="nav-link" href="#schedule" data-sec="schedule">Schedule of Assignments</a>
-    </div>
-
-    <div class="sidebar-foot">
-      Fall 2026 · Federal Hall #0009<br>
-      Tu / Th · 9:30–10:45 am<br>
-      J. Park · BUS 100
-    </div>
-  </nav>
-
-  <main>
-
-    <!-- ============ HERO / HOME ============ -->
-    <section class="section hero" id="home" style="border-bottom:1px solid var(--line);">
-      <div class="hero-top">
-        <img class="logo" src="data:image/png;base64,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" alt="Indiana State University, Scott College of Business">
-      </div>
-      <h1>BUS 100 - Introduction to Contemporary Business</h1>
-
-      <div class="hero-meta">
-        <span class="chip">📘 <b>BUS 100</b></span>
-        <span class="chip">🎓 <b>3</b> Credit Hours</span>
-        <span class="chip">🗓️ <b>Tu / Th</b> 9:30 – 10:45 am</span>
-        <span class="chip">📍 Federal Hall <b>#0009</b></span>
-      </div>
-
-      <div class="instructor-card">
-        <img src="data:image/jpeg;base64,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" alt="Portrait of Jin Park, Ph.D.">
-        <div class="instructor-info">
-          <div class="name">Jin Park, Ph.D.</div>
-          <div class="role">Instructor</div>
-          <dl class="idetails">
-            <dt>Office</dt><dd>Federal Hall #116</dd>
-            <dt>Phone</dt><dd>(812) 237-9036</dd>
-            <dt>E-Mail</dt><dd><a href="mailto:jin.park@indstate.edu">jin.park@indstate.edu</a></dd>
-            <dt>Office Hours</dt><dd>Mon.–Thur., 2:00 pm – 4:00 pm, or by appointment</dd>
-          </dl>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ OVERVIEW ============ -->
-    <section class="section" id="overview">
-      <span class="eyebrow blue">01 · Start Here</span>
-      <h2>Catalog Description</h2>
-      <p>An introduction to contemporary business and development of connections to the Scott College of Business for first-year students. Special attention will be given to a survey of business disciplines and contemporary issues in business. Students begin their career development process, learn team building skills, and explore career enriching experiences such as internships and study abroad. Not open to juniors or seniors in the College of Business.</p>
-
-      <h3>Required and Recommended Course Materials</h3>
-      <div class="card accent-blue">
-        <p><strong>1. Required:</strong> Better Business, 7th ed., by Michael R. Solomon | Mary Anne Poatsy | Kendall Martin</p>
-        <p style="margin-top:-6px;">e-Textbook ISBN: 978-0-13-543522-9, Print Textbook ISBN: 978-0-13-543504-5</p>
-        <p style="margin-bottom:0;"><strong>2. Recommended:</strong> Selected articles, reports, and media, available via Canvas</p>
-      </div>
-
-      <h3>Overview and Introduction</h3>
-      <p>This course introduces first-year students to the dynamic world of business while helping them build meaningful connections within the Scott College of Business. Through an engaging survey of key business disciplines, including accounting, finance, insurance and risk management, marketing, supply chain management, management, and human resource management, you will gain an understanding of how organizations create value and address challenges in today's global and technology-driven environment. As you explore these disciplines, you will be better equipped to identify the business major and career path that align with your interests, strengths, and goals.</p>
-
-      <div class="discipline-wheel">
-        <span class="discipline d1"><span class="dot"></span>Accounting</span>
-        <span class="discipline d2"><span class="dot"></span>Finance</span>
-        <span class="discipline d3"><span class="dot"></span>Insurance &amp; Risk Mgmt.</span>
-        <span class="discipline d4"><span class="dot"></span>Marketing</span>
-        <span class="discipline d5"><span class="dot"></span>Supply Chain Mgmt.</span>
-        <span class="discipline d6"><span class="dot"></span>Management</span>
-        <span class="discipline d7"><span class="dot"></span>Human Resource Mgmt.</span>
-      </div>
-
-      <p>BUS 100 also supports professional development. Students will assess their skills, build teamwork and communication abilities, explore ethical business practices, and analyze the impact of emerging technologies like artificial intelligence. Experiential learning opportunities, including internships and study abroad, are emphasized to foster academic and career readiness.</p>
-    </section>
-
-    <!-- ============ LEARNING OBJECTIVES ============ -->
-    <section class="section" id="objectives">
-      <span class="eyebrow gold">02 · Outcomes</span>
-      <h2>Learning Objectives</h2>
-      <p>Upon successful completion of BUS 100, students will be able to:</p>
-      <ol>
-        <li>Apply academic success strategies and university resources to support personal responsibility, academic achievement, and degree completion.</li>
-        <li>Develop an initial academic and career plan by identifying personal strengths, interests, business majors, and professional opportunities.</li>
-        <li>Demonstrate professional behaviors and effective communication skills appropriate for academic, business, and workplace settings.</li>
-        <li>Apply critical thinking, decision-making, and digital technologies, including artificial intelligence, to analyze business and professional situations.</li>
-        <li>Explain the roles and interrelationships of the major business disciplines and their contributions to organizational success.</li>
-        <li>Explain how economic, technological, ethical, social, cultural, and global factors influence business decisions and organizational performance.</li>
-        <li>Evaluate the importance of ethics, social responsibility, diversity, and inclusion in business and professional environments.</li>
-      </ol>
-
-      <h3><em>Course's Relationship to College of Business' Learning Objectives</em></h3>
-      <div class="lg-grid">
-        <div class="lg-item">
-          <div class="lg-tag">LG1</div>
-          <div>
-            <p class="lg-title">Students will be knowledgeable about current business concepts.</p>
-            <p>Students gain foundational knowledge of current business concepts through readings, discussions, guest speakers, and applied activities.</p>
-          </div>
-        </div>
-        <div class="lg-item">
-          <div class="lg-tag">LG2</div>
-          <div>
-            <p class="lg-title">Students will understand internal and external influences on domestic and international business practices.</p>
-            <p>Students examine how internal and external factors — economic, social, cultural, technological, political, legal, and global — influence business practices at home and abroad.</p>
-          </div>
-        </div>
-        <div class="lg-item">
-          <div class="lg-tag">LG3</div>
-          <div>
-            <p class="lg-title">Students will solve business problems by applying appropriate technology, tools, and decision-making techniques.</p>
-            <p>Students develop problem-solving skills and learn to apply technology and decision-making frameworks, including digital tools and artificial intelligence.</p>
-          </div>
-        </div>
-        <div class="lg-item">
-          <div class="lg-tag">LG4</div>
-          <div>
-            <p class="lg-title">Students will evaluate the ethical dimensions of business decisions.</p>
-            <p>Students explore ethical dimensions of business decisions through case studies, discussions, and real-world examples.</p>
-          </div>
-        </div>
-        <div class="lg-item">
-          <div class="lg-tag">LG5</div>
-          <div>
-            <p class="lg-title">Students will demonstrate the ability to communicate effectively.</p>
-            <p>Students practice professional communication through writing, presentations, teamwork, classroom discussion, classroom activity, and networking.</p>
-          </div>
-        </div>
-        <div class="lg-item">
-          <div class="lg-tag">LG6</div>
-          <div>
-            <p class="lg-title">Students will demonstrate an understanding of appropriate workplace expectations and behaviors.</p>
-            <p>Students learn about workplace expectations and professionalism, with opportunities to practice these skills throughout the semester.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ SHARED COMMITMENT ============ -->
-    <section class="section" id="commitment">
-      <span class="eyebrow pink">03 · Classroom Culture</span>
-      <h2>Our Shared Commitment</h2>
-      <p>Creating a positive and productive learning environment is a shared responsibility between students and the instructor. Together, we strive for a meaningful, respectful, and engaging learning experience.</p>
-
-      <div class="commit-cols">
-        <div class="commit-col students">
-          <h4>All students commit to:</h4>
-          <ol>
-            <li>Understanding and following course expectations outlined in the syllabus;</li>
-            <li>Participating actively, respectfully, and professionally in class activities, discussions, and collaborative work;</li>
-            <li>Taking responsibility for preparation, attendance, time management, deadlines, and overall engagement;</li>
-            <li>Demonstrating initiative, accountability, and a commitment to learning;</li>
-            <li>Upholding academic integrity and using respectful communication in all interactions; and</li>
-            <li>Exercising sound judgment and professionalism in all course-related matters.</li>
-          </ol>
-        </div>
-        <div class="commit-col instructor">
-          <h4>As your instructor, I commit to:</h4>
-          <ol>
-            <li>Creating a supportive, inclusive, and engaging learning environment;</li>
-            <li>Providing timely access to course materials, resources, and academic support;</li>
-            <li>Preparing thoroughly to facilitate meaningful learning experiences;</li>
-            <li>Grading fairly and providing timely, constructive feedback;</li>
-            <li>Treating all students with respect, fairness, and consistency; and</li>
-            <li>Maintaining high ethical standards while seeking feedback to continuously improve the course.</li>
-          </ol>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ GRADING ============ -->
-    <section class="section" id="grading">
-      <span class="eyebrow teal">04 · Points &amp; Grades</span>
-      <h2>Grading and Grading Policies</h2>
-      <p>The final grade for the course is based on the following items shown in the table below.</p>
-
-      <table>
-        <thead><tr><th>Item</th><th>Points</th><th>Item</th><th>Points</th></tr></thead>
-        <tbody>
-          <tr><td>Chapter Learning Objectives Notes</td><td>120</td><td>Exams</td><td>100</td></tr>
-          <tr><td>Assignment</td><td>160</td><td>Final Exam</td><td>100</td></tr>
-          <tr><td>Quizzes</td><td>120</td><td>Attendance</td><td>?</td></tr>
-          <tr class="totalrow"><td></td><td></td><td>Total</td><td>600</td></tr>
-        </tbody>
-      </table>
-
-      <p>Your final letter grade will be determined according to the scale below.</p>
-      <div class="scale-grid">
-        <div class="scale-cell"><span class="grade-letter">A+</span><span>≥ 97.5%</span></div>
-        <div class="scale-cell"><span class="grade-letter">A</span><span>≥ 93.0%</span></div>
-        <div class="scale-cell"><span class="grade-letter">A-</span><span>≥ 90.0%</span></div>
-        <div class="scale-cell"><span class="grade-letter">B+</span><span>≥ 87.5%</span></div>
-        <div class="scale-cell"><span class="grade-letter">B</span><span>≥ 82.0%</span></div>
-        <div class="scale-cell"><span class="grade-letter">B-</span><span>≥ 79.5%</span></div>
-        <div class="scale-cell"><span class="grade-letter">C+</span><span>≥ 77.0%</span></div>
-        <div class="scale-cell"><span class="grade-letter">C</span><span>≥ 71.0%</span></div>
-        <div class="scale-cell"><span class="grade-letter">C-</span><span>≥ 69.0%</span></div>
-        <div class="scale-cell"><span class="grade-letter">D+</span><span>≥ 66.0%</span></div>
-        <div class="scale-cell"><span class="grade-letter">D</span><span>≥ 60.5%</span></div>
-        <div class="scale-cell"><span class="grade-letter">D-</span><span>≥ 59.0%</span></div>
-        <div class="scale-cell"><span class="grade-letter">F</span><span>&lt; 59.0%</span></div>
-      </div>
-
-      <!-- Interactive grade calculator -->
-      <div class="calc">
-        <span class="eyebrow" style="background:rgba(240,169,46,.18); color:var(--gold);">Interactive</span>
-        <h3>Estimate Your Grade</h3>
-        <p class="lead">Drag each slider to the points you expect to earn (or have earned) in that category. The calculator totals them against the 600-point scale above.</p>
-        <div class="calc-grid">
-          <div class="calc-field">
-            <label>Chapter LO Notes <span class="val" id="v-lo">0</span> / 120</label>
-            <input type="range" min="0" max="120" value="0" id="lo">
-          </div>
-          <div class="calc-field">
-            <label>Assignment <span class="val" id="v-as">0</span> / 160</label>
-            <input type="range" min="0" max="160" value="0" id="as">
-          </div>
-          <div class="calc-field">
-            <label>Quizzes <span class="val" id="v-qz">0</span> / 120</label>
-            <input type="range" min="0" max="120" value="0" id="qz">
-          </div>
-          <div class="calc-field">
-            <label>Exams <span class="val" id="v-ex">0</span> / 100</label>
-            <input type="range" min="0" max="100" value="0" id="ex">
-          </div>
-          <div class="calc-field">
-            <label>Final Exam <span class="val" id="v-fe">0</span> / 100</label>
-            <input type="range" min="0" max="100" value="0" id="fe">
-          </div>
-          <div class="calc-field">
-            <label>Attendance Bonus <span class="val" id="v-at">0</span> / 40</label>
-            <input type="range" min="0" max="40" value="0" id="at">
-          </div>
-        </div>
-        <div class="calc-result">
-          <div>
-            <div class="meta">Total earned (of 600 base points)</div>
-            <div class="score" id="totalScore">0 <span style="font-size:16px; color:#93a5c6;">pts</span></div>
-          </div>
-          <div style="text-align:right;">
-            <div class="meta">Projected letter grade</div>
-            <div class="letter" id="letterGrade">—</div>
-          </div>
-        </div>
-        <p class="calc-note">Attendance points are earned in addition to the 600 base points (up to 40 extra for zero absences — see Attendance policy below). This tool is a personal estimate only and does not reflect your official Canvas grade.</p>
-      </div>
-
-      <h3>Grading Policies</h3>
-      <p>All written assignments must be submitted through the links provided on Canvas, following the specific instructions and requirements. Assignments should be carefully proofread and free of grammatical, typographical, and writing errors. In addition,</p>
-      <ul>
-        <li>Please submit your work in the most appropriate format, such as Microsoft Word, Excel, or PDF.</li>
-        <li>Use a citation style, whenever necessary, you are comfortable with.</li>
-        <li>A 5% deduction from the earned points will be applied for each missing or incomplete required item listed below on every written assignment submission. For example, omitting the course title will result in a 5% deduction. Submissions missing all required items will incur a 20% total deduction.
-          <ul>
-            <li><em>Date when you prepare the assignment</em></li>
-            <li><em>Course number and title: INS 345 — Commercial Risk Management and Insurance</em></li>
-            <li><em>Assignment title</em></li>
-            <li><em>Your name for individual assignment or Names of all members for Group assignment</em></li>
-          </ul>
-        </li>
-        <li>Late assignments will be accepted with penalty unless there is an extraordinary circumstance. Such exceptions must be supported by appropriate documentation and are subject to my review and approval.</li>
-        <li>Any plagiarism in a written assignment will be graded zero and may be reported to the university. Students must refer to the plagiarism information on this syllabus.</li>
-        <li>All assignments are expected to be graded in a timely manner (within a five business days from the due date). If grading is not done within ten (10) business days from the due date and students are not informed of the delay in grading with a definite date to complete the grading, the submitted assignment is given full credit as long as the assignment is (1) complete, (2) submitted in time, and (3) follows the specific assignment requirements.</li>
-      </ul>
-    </section>
-
-    <!-- ============ ASSIGNMENTS ============ -->
-    <section class="section" id="assignments">
-      <span class="eyebrow plum">05 · Coursework</span>
-      <h2>Assignments &amp; Exams</h2>
-
-      <h3>Chapter Learning Objective Notes</h3>
-      <p>Chapter Learning Objective Notes are designed to help you actively engage with the assigned textbook readings by focusing on the learning goals (or purposes) of each chapter. Rather than simply summarizing the chapter, you should identify the key concepts, principles, and ideas that support each learning goal and explain how they contribute to achieving the chapter's intended outcomes. This approach encourages you to read with purpose, organize information around the most important takeaways, and develop a deeper understanding of the material.</p>
-      <p>By completing the Chapter Learning Objective Notes consistently, you will reinforce your understanding of the chapter's core concepts, improve long-term retention of the material, and strengthen your ability to apply course concepts to discussions, case analyses, assignments, real-world situations, and expand to other courses. Focusing on the learning objectives will also help you distinguish between essential concepts and supporting details, making your studying more effective and efficient.</p>
-      <p>Detailed instructions, expectations, and information regarding this assignment will be available on Canvas.</p>
-
-      <h3>Case Analyses</h3>
-      <p>Policy-specific and comprehensive property and liability risk management and insurance cases will be analyzed throughout the semester, with a strong emphasis on insurance claim analysis. These cases will require students to apply policy language, coverage forms, endorsements, exclusions, limits, and deductibles to realistic loss scenarios. Students will evaluate the facts of each claim, identify applicable coverages, determine whether coverage is triggered, and assess potential insurer and insured responsibilities.</p>
-      <p>Case analyses may be completed individually or in groups and may take place in class, outside of class, or in a combination of both, depending on the assignment. In-class case analyses are designed to encourage discussion, collaboration, and real-time application of course concepts. Students are expected to demonstrate critical thinking, clear reasoning, and professional communication consistent with industry standards. More detailed case materials, grading criteria, and instructions will be provided in class and on Canvas.</p>
-
-      <h3>Attendance</h3>
-      <p>Students are expected to attend all class sessions and arrive on time. Consistent attendance is strongly associated with success in class discussions, assignments, exams, and overall course performance. Attendance will be monitored throughout the semester, and adjustments to final points will be based on attendance records as outlined below.</p>
-      <ul>
-        <li>Earn extra 40 points for having no absence throughout the semester. Thereafter, students 5 earn extra points less per excused absence without an unexcused absence. Thus, a student with five excused absences without any unexcused absence earns 15 extra points.</li>
-        <li>A first unexcused absence, regardless of the number of unexcused absences, eliminates a chance to earn extra attendance points. Any additional unexcused absence after the second unexcused absence costs students 4 points per unexcused absence.</li>
-        <li>Any class session canceled by the university or the instructor will be counted as full attendance.</li>
-      </ul>
-      <p>To have an absence classified as excused, students must submit written documentation within one week of the missed class. The documentation must be reviewed and approved by the instructor. Absences without proper documentation cannot be considered excused.</p>
-
-      <h3>Quizzes and Exams</h3>
-      <p>There are two types of tests; various short quizzes and comprehensive Final Exam. These tests are consisted of multiple choice, case analyses, short answer and essay questions. There will be <em>no makeup test unless it is pre-arranged due to an unexpected circumstance</em>.</p>
-      <p>Students are responsible for reviewing and complying with all university and course policies, including but not limited to the following.</p>
-    </section>
-
-    <!-- ============ COURSE POLICIES (accordion) ============ -->
-    <section class="section" id="policies">
-      <span class="eyebrow blue">06 · Read Carefully</span>
-      <h2>Course Policies</h2>
-      <p>Expand each item below for the full policy text.</p>
-
-      <div class="accordion">
-        <div class="accordion-item">
-          <div class="accordion-head"><span>Honesty &amp; Academic Integrity</span><span class="plus">+</span></div>
-          <div class="accordion-body">
-            <p>It is assumed that all students have read and understand ISU's academic integrity policy and the Code of Student Conduct (<a href="https://www.indstate.edu/sites/default/files/media/code_0.pdf" target="_blank" rel="noopener">indstate.edu/sites/default/files/media/code_0.pdf</a>). Infractions of this policy will result in actions as outlined in the policy.</p>
-            <p><strong>It is students' responsibility to understand what constitutes plagiarism within an academic setting. Anyone involved in plagiarism or violation of other academic dishonesty in written assignments, quizzes, and final exam may result in the "F" grade for the course.</strong></p>
-            <p>Any plagiarism in a written assignment will result in a zero grade. For a group assignment, plagiarism by a member will also result in zero for the group assignment when other members do not complete plagiarism. According to the Council of Writing Program Administrators (WPA), plagiarism is defined as</p>
-            <blockquote>
-              <p>In an instructional setting, plagiarism occurs when a writer deliberately uses someone else's language, ideas, or other original (not common-knowledge) material without acknowledging its source.</p>
-              <p>This definition applies to texts published in print or online, to manuscripts, and to the work of other student writers.</p>
-              <p>Most current discussions of plagiarism fail to distinguish between:</p>
-            </blockquote>
-            <ol>
-              <li>submitting someone else's text as one's own or attempting to blur the line between one's own ideas or words and those borrowed from another source, and</li>
-              <li>carelessly or inadequately citing ideas and words borrowed from another source.</li>
-            </ol>
-            <blockquote>
-              <p>Such discussions conflate <em>plagiarism</em> with the <em>misuse of sources.</em></p>
-              <p>Ethical writers make every effort to acknowledge sources fully and appropriately in accordance with the contexts and genres of their writing. A student who attempts (even if clumsily) to identify and credit his or her source, but who misuses a specific citation format or incorrectly uses quotation marks or other forms of identifying material taken from other sources, has not plagiarized. Instead, such a student should be considered to have failed to cite and document sources appropriately.</p>
-              <p>Source: Defining and Avoiding Plagiarism: The WPA Statement on Best Practices (<a href="http://www.wpacouncil.org/node/9" target="_blank" rel="noopener">wpacouncil.org/node/9</a>)</p>
-            </blockquote>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <div class="accordion-head"><span>Accommodation for Students with Special Needs</span><span class="plus">+</span></div>
-          <div class="accordion-body">
-            <p>If you think you have a "special need" that may affect your success in this course or wish to discuss academic accommodation, please arrange to meet with me as soon as possible. The Associate Provost, your academic advisor, and I are available to help you identify options, choose appropriate solutions or strategies in a variety of situations, and access the various services that are available in support of the academic mission of this university.</p>
-            <p>Indiana State University seeks to provide effective services and accommodation for qualified individuals with documented disabilities. If you need an accommodation because of a documented disability, you are required to register with Disabled Student Services within the Center for Student Success - <a href="http://www.indstate.edu/cfss/programs/dss/index.htm" target="_blank" rel="noopener">indstate.edu/cfss/programs/dss/index.htm</a>. You can contact the Center at 237-2301, 2nd floor Gillum Hall.</p>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <div class="accordion-head"><span>Communication Policy</span><span class="plus">+</span></div>
-          <div class="accordion-body">
-            <p>For individualized communication, Inbox on Canvas is the official means of communication between the professor and you. For a class announcement, both in-class announcement and Canvas announcement are used interchangeably, but there is no guarantee that any in-class announcement is re-announced via Canvas, and vice-versa.</p>
-            <p>You can expect to hear back from me within 24 hours after you sent your message on weekdays, but any message sent to me on Friday, holiday eves, weekends, and holidays may be answered on the following Monday or business day. If necessary, you can request a virtual meeting at your convenient time, subject to my availability. All message/email exchanges should address recipients appropriately.</p>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <div class="accordion-head"><span>Laptops / Technology</span><span class="plus">+</span></div>
-          <div class="accordion-body">
-            <p>It is your responsibility to ensure you have the necessary equipment (e.g., laptop, computer, or tablet) to fully participate in class activities. This includes a device with audio and video capabilities. For this course, it is assumed that you comply with the University's mandatory laptop policy. At times, you may be asked to close your laptop and actively engage in class activities as directed by the instructor.</p>
-            <p>The use of laptops, computers, or other electronic devices must adhere to the guidelines outlined in this syllabus and the University's Code of Student Conduct. While general use of these devices is permitted, it must be <strong>strictly for class-related purposes</strong>. Engaging in non-course-related activities is prohibited and may result in restrictions on your privilege to use such devices during class.</p>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <div class="accordion-head"><span>Technology &amp; Writing Help</span><span class="plus">+</span></div>
-          <div class="accordion-body">
-            <p>Please notify me as soon as you encounter an issue, as I may be able to assist you directly. If additional help is needed, the Office of Information Technology (OIT) offers a variety of resources to support your technology needs. To start, you can access the self-help tools available through the ISU Portal and the OIT website. These tools provide direct access to the OIT Knowledge Base, which contains up-to-date information about common errors, problems, and solutions for Canvas and other supported technologies. Think of it as a comprehensive FAQ resource. Please inform me as soon as you know there is an issue. I may be able to assist you; otherwise, the Office of Information Technology (OIT) offers many resources to assist with your technology needs. First, you can use a self-help tool available through ISU Portal as well as on the OIT website. Here you have direct access to the OIT Knowledge Base with up-to-date information about common errors, problems, and issues within Canvas and other supported technologies. Think of this as an FAQ resource. Simply log into ISU Portal and click on OIT Service Desk TDX link available under ISU APPS menu. Or contact the OIT Help Desk directly for any technology help:</p>
-            <p>Phone: 812-237-2910 or 888-818-5465<br>Email: <a href="mailto:IT-Help@indstate.edu">IT-Help@indstate.edu</a></p>
-            <p>The <strong>ISU Writing Center</strong> is located on the second floor of Cunningham Memorial Library, and provides help to students during any stage of the writing process. You can schedule appointments by calling 237-2989, e-mailing <a href="mailto:isu-writingcenter@indstate.edu">isu-writingcenter@indstate.edu</a> and/or consulting the website at <a href="https://www.indstate.edu/isu-writing-center" target="_blank" rel="noopener">indstate.edu/isu-writing-center</a>.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ UNIVERSITY POLICIES ============ -->
-    <section class="section" id="university">
-      <span class="eyebrow gold">07 · Campus-Wide</span>
-      <h2>University Policies &amp; Resources</h2>
-      <p>Students are responsible for reviewing and complying with all university and course policies, including but not limited to the following.</p>
-
-      <div class="accordion">
-        <div class="accordion-item">
-          <div class="accordion-head"><span>The Sycamore Standard</span><span class="plus">+</span></div>
-          <div class="accordion-body">
-            <p>Indiana State University Students at Indiana State University are expected to accept certain personal responsibilities that constitute the "standard" for behavior in a community of scholars.</p>
-            <p>As a student at Indiana State University:</p>
-            <blockquote>I will practice personal and academic integrity; I will commit my energies to the pursuit of truth, learning, and scholarship; I will foster an environment conducive to the personal and academic accomplishment of all students; I will avoid activities that promote bigotry or intolerance; I will choose associations and define my relationships with others based on respect for individual rights and human dignity; I will conduct my life as a student in a manner that brings honor to me and to the University Community; I will discourage actions or behaviors by others that are contrary to these standards.</blockquote>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <div class="accordion-head"><span>Academic Freedom</span><span class="plus">+</span></div>
-          <div class="accordion-body">
-            <p>Indiana State subscribes to the American Association of University Professors' guidelines for academic freedom and faculty duties and responsibilities as described on their website. Here is some of what the site states:</p>
-            <blockquote>Teachers are entitled to freedom in the classroom in discussing their subject, but they should be careful not to introduce into their teaching controversial matter which has no relation to their subject.... As scholars and educational officers, they should remember that the public may judge their profession and their institution by their utterances. Hence they should at all times be accurate, should exercise appropriate restraint, should show respect for the opinions of others, and should make every effort to indicate that they are not speaking for the institution.</blockquote>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <div class="accordion-head"><span>Statement on Non-Discrimination, Harassment &amp; Sexual Misconduct</span><span class="plus">+</span></div>
-          <div class="accordion-body">
-            <p><a href="https://www.indstate.edu/policy-library/non-discrimination-and-anti-harassment" target="_blank" rel="noopener">Indiana State University Policy 923</a> strictly prohibits discrimination based on: age, disability, genetic information, national origin, pregnancy, race/color, religion, sex, gender identity or expression, sexual orientation, veteran status, or any other class protected by federal and state statutes in ISU programs and activities or that interferes with the educational or workplace environment.</p>
-            <p>Title IX of the Educational Amendments of 1972 prohibits discrimination based on sex, including sexual harassment. Sexual harassment includes quid pro quo harassment, unwelcome verbal or physical conduct, sexual assault, dating violence, domestic violence, and stalking.</p>
-            <p>If you witness or experience any forms of the above discrimination, you may report to:</p>
-            <ul>
-              <li>Office: Equal Opportunity &amp; Title IX; (812) 237-8954; Rankin Hall, Room 426</li>
-              <li>Email: <a href="mailto:ISU-equalopportunity-titleix@mail.indstate.edu">ISU-equalopportunity-titleix@mail.indstate.edu</a></li>
-              <li>Online: <a href="https://cm.maxient.com/reportingform.php?IndianaStateUniv&layout_id=10" target="_blank" rel="noopener">cm.maxient.com/reportingform.php?IndianaStateUniv&amp;layout_id=10</a></li>
-            </ul>
-            <p>Disclosures made to the following confidential campus resources will not be reported to the Office of Equal Opportunity and Title IX:</p>
-            <ul>
-              <li>ISU Student Counseling Center: (812) 237-3939; Gillum Hall, 2nd Floor</li>
-              <li>Victim Advocate: (812) 237-3829; HMSU 8th Floor</li>
-              <li>UAP Clinic/ISU Health Center: (812) 237-3883; 567 N. 5th Street</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <div class="accordion-head"><span>Sycamores Care</span><span class="plus">+</span></div>
-          <div class="accordion-body">
-            <p>Sycamores Care is a campus-wide program that cares for students and helps students overcome obstacles. The Office of the Dean of Students collaborates with all Indiana State University departments to create a caring culture at Indiana State. Family members, fellow students, faculty, staff, and employers can make a referral to Sycamores Care. Anonymous referrals are accepted &amp; students may refer themselves too. You can make a referral through the <strong>Sycamores Care Referral Form</strong>, emailing <a href="mailto:ISU-DeanOfStudents@mail.indstate.edu">ISU-DeanOfStudents@mail.indstate.edu</a>, or by calling 812-237-3829.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ SCHEDULE ============ -->
-    <section class="section" id="schedule">
-      <span class="eyebrow pink">08 · The Semester</span>
-      <h2>Schedule of Assignments</h2>
-      <p>The following schedule/topic is tentative and subject to change.</p>
-
-      <div class="timeline">
-        <div class="t-item">
-          <div class="t-dot">•</div>
-          <div class="t-card">
-            <div class="t-week">Weeks 1–2</div>
-            <div class="t-topic">Introduction &amp; Business and Economics</div>
-            <div class="t-readings">Chapter 1: Business Basics<br>Chapter 2: Economics</div>
-          </div>
-        </div>
-        <div class="t-item">
-          <div class="t-dot">3</div>
-          <div class="t-card">
-            <div class="t-week">Week 3</div>
-            <div class="t-readings">Chapter 3: Ethics in Business<br>Chapter 4: Business in a Global Economy</div>
-          </div>
-        </div>
-        <div class="t-item">
-          <div class="t-dot">4</div>
-          <div class="t-card">
-            <div class="t-week">Week 4</div>
-            <div class="t-readings">Chapter 5: Small Business and the Entrepreneur</div>
-            <span class="t-flag">Team Written Report 1 is due</span>
-          </div>
-        </div>
-        <div class="t-item">
-          <div class="t-dot">5</div>
-          <div class="t-card">
-            <div class="t-week">Week 5</div>
-            <div class="t-readings">Chapter 6: Forms of Business Ownership<br>Chapter 7: Business Management and Organization<br>Chapter 8: Motivation, Leadership, and Teamwork</div>
-          </div>
-        </div>
-        <div class="t-item">
-          <div class="t-dot">•</div>
-          <div class="t-card">
-            <div class="t-readings">Chapter 9: Human Resource Management<br>Mid-term exam</div>
-            <span class="t-flag">Mid-Term Exam (Chapters 1–9; 9)</span>
-          </div>
-        </div>
-        <div class="t-item">
-          <div class="t-dot">•</div>
-          <div class="t-card">
-            <div class="t-readings">Chapter 11: Production, Operations, and Supply Chain Management<br>Chapter 12: Marketing and Consumer Behavior</div>
-            <span class="t-flag">Team Written Report 2 is due</span>
-          </div>
-        </div>
-        <div class="t-item">
-          <div class="t-dot">•</div>
-          <div class="t-card">
-            <div class="t-readings">Chapter 13: Product Development, Branding, and Pricing Strategies</div>
-          </div>
-        </div>
-        <div class="t-item">
-          <div class="t-dot">•</div>
-          <div class="t-card">
-            <div class="t-readings">Chapter 14: Promotion and Distribution<br>Chapter 15: Financing and Accounting for Business Operations</div>
-          </div>
-        </div>
-        <div class="t-item">
-          <div class="t-dot">•</div>
-          <div class="t-card">
-            <div class="t-readings">Chapter 16: Investment Opportunities in the Securities Market</div>
-          </div>
-        </div>
-        <div class="t-item">
-          <div class="t-dot">•</div>
-          <div class="t-card">
-            <div class="t-readings">Final Exam</div>
-            <span class="t-flag">Team Written Report 3 is due · Final Exam (Chapters 10–16)</span>
-          </div>
-        </div>
-        <div class="t-item">
-          <div class="t-dot">•</div>
-          <div class="t-card">
-            <div class="t-readings">Class presentations</div>
-          </div>
-        </div>
-        <div class="t-item">
-          <div class="t-dot">•</div>
-          <div class="t-card">
-            <div class="t-readings">Class presentations</div>
-            <span class="t-flag">Team Written Report (Employee Contributions) is due</span>
-          </div>
-        </div>
-      </div>
-      <p class="divider-note">Weeks are shown as printed in the original syllabus table; several rows were not assigned an explicit week number in the source document.</p>
-    </section>
-
-    <div class="footer">
-      <p>BUS 100 — Introduction to Contemporary Business · Fall 2026 · Jin Park, Ph.D. · Scott College of Business, Indiana State University</p>
-      <a class="back-top" href="#home">↑ Back to top</a>
-    </div>
-
+    <nav class="controls">
+      <button class="nav-btn" id="prevBtn">← Prev</button>
+      <div class="dots" id="dots"></div>
+      <button class="nav-btn" id="nextBtn">Next →</button>
+    </nav>
   </main>
 </div>
 
 <script>
-  // Mobile nav toggle
-  document.getElementById('navToggle').addEventListener('click', function(){
-    document.getElementById('sidebar').classList.toggle('open');
+(function(){
+  var SECTIONS=[
+    {label:"Welcome",obj:"Course Overview",min:1},
+    {label:"Course information",obj:"Course Information",min:2},
+    {label:"Course overview",obj:"Course Overview",min:2},
+    {label:"Learning objectives",obj:"Learning Objectives",min:3},
+    {label:"SCOB learning goals",obj:"College Learning Goals",min:3},
+    {label:"Shared commitment",obj:"Course Expectations",min:3},
+    {label:"Grading",obj:"Grading",min:3},
+    {label:"Assignments & quizzes",obj:"Grading Policies",min:3},
+    {label:"Submission standards",obj:"Grading Policies",min:3},
+    {label:"Attendance",obj:"Attendance Bonus",min:3},
+    {label:"Course policies",obj:"Course Policies",min:4},
+    {label:"University support",obj:"University Policies",min:4},
+    {label:"SCOB majors",obj:"Career Exploration",min:3},
+    {label:"Course roadmap",obj:"Schedule",min:4},
+    {label:"Contact & closing",obj:"Course Overview",min:2}
+  ];
+  var current=0,visited=new Array(SECTIONS.length).fill(false);
+  var slides=document.querySelectorAll('.slide');
+  var ledgerList=document.getElementById('ledgerList');
+  var dotsWrap=document.getElementById('dots');
+  var prevBtn=document.getElementById('prevBtn'),nextBtn=document.getElementById('nextBtn');
+  var objectivePill=document.getElementById('objectivePill');
+
+  SECTIONS.forEach(function(s,i){
+    var li=document.createElement('li'),btn=document.createElement('button');
+    btn.className='ledger-item';
+    btn.innerHTML='<span class="li-num">'+String(i+1).padStart(2,'0')+'</span><span class="li-label">'+s.label+'</span><span class="li-min">'+s.min+'m</span>';
+    btn.addEventListener('click',function(){goTo(i);closeRailMobile()});
+    li.appendChild(btn);ledgerList.appendChild(li);
+    var dot=document.createElement('span');dot.className='dot';dotsWrap.appendChild(dot);
   });
 
-  // Active section highlighting + rail fill
-  const links = Array.from(document.querySelectorAll('.nav-link'));
-  const sections = links.map(l => document.getElementById(l.dataset.sec));
-  const rail = document.getElementById('navRail');
-  const fill = document.getElementById('navFill');
-
-  function onScroll(){
-    let activeIndex = 0;
-    const scrollPos = window.scrollY + window.innerHeight * 0.3;
-    sections.forEach((sec, i) => {
-      if(sec && sec.offsetTop <= scrollPos) activeIndex = i;
+  function render(){
+    slides.forEach(function(sl){sl.classList.toggle('active',+sl.dataset.idx===current)});
+    document.querySelectorAll('.ledger-item').forEach(function(el,i){
+      el.classList.toggle('current',i===current);el.classList.toggle('visited',visited[i]&&i!==current);
     });
-    links.forEach((l,i) => l.classList.toggle('active', i === activeIndex));
-
-    // fill rail proportionally to active link position
-    const activeLink = links[activeIndex];
-    if(activeLink){
-      const railRect = rail.getBoundingClientRect();
-      const linkRect = activeLink.getBoundingClientRect();
-      const h = Math.max(0, (linkRect.top + linkRect.height/2) - railRect.top - 8);
-      fill.style.height = h + 'px';
-    }
-    // close mobile nav after scroll starts
+    document.querySelectorAll('.dot').forEach(function(d,i){d.classList.toggle('active',i===current)});
+    prevBtn.disabled=current===0;
+    nextBtn.textContent=current===SECTIONS.length-1?'Done':'Next →';
+    nextBtn.disabled=current===SECTIONS.length-1;
+    objectivePill.textContent=SECTIONS[current].obj;
+    visited[current]=true;
+    document.getElementById('viewport').scrollTop=0;
   }
-  document.addEventListener('scroll', onScroll, {passive:true});
-  window.addEventListener('load', onScroll);
-  window.addEventListener('resize', onScroll);
-
-  // close mobile menu on link click
-  links.forEach(l => l.addEventListener('click', () => {
-    document.getElementById('sidebar').classList.remove('open');
-  }));
-
-  // Accordion
-  document.querySelectorAll('.accordion-head').forEach(head => {
-    head.addEventListener('click', () => {
-      const item = head.parentElement;
-      const body = item.querySelector('.accordion-body');
-      const isOpen = item.classList.contains('open');
-      if(isOpen){
-        item.classList.remove('open');
-        body.style.maxHeight = null;
-      } else {
-        item.classList.add('open');
-        body.style.maxHeight = body.scrollHeight + 'px';
-      }
-    });
+  function goTo(i){if(i<0||i>=SECTIONS.length)return;current=i;render()}
+  prevBtn.addEventListener('click',function(){goTo(current-1)});
+  nextBtn.addEventListener('click',function(){goTo(current+1)});
+  document.getElementById('beginBtn').addEventListener('click',function(){goTo(1)});
+  document.addEventListener('keydown',function(e){
+    var tag=(e.target.tagName||'').toLowerCase();if(tag==='textarea'||tag==='input')return;
+    if(e.key==='ArrowRight')goTo(current+1);if(e.key==='ArrowLeft')goTo(current-1);
   });
 
-  // Grade calculator
-  const ids = ['lo','as','qz','ex','fe','at'];
-  const maxes = {lo:120, as:160, qz:120, ex:100, fe:100, at:40};
-  function updateCalc(){
-    let base = 0, att = 0;
-    ids.forEach(id => {
-      const v = parseInt(document.getElementById(id).value, 10);
-      document.getElementById('v-' + id).textContent = v;
-      if(id === 'at'){ att = v; } else { base += v; }
-    });
-    const total = base; // out of 600
-    const pct = (total / 600) * 100;
-    document.getElementById('totalScore').innerHTML = total + ' <span style="font-size:16px;color:#93a5c6;">/ 600 pts</span>' +
-      (att > 0 ? ' <span style="font-size:14px;color:var(--gold);">+' + att + ' attendance</span>' : '');
-
-    let letter = 'F';
-    if(pct >= 97.5) letter = 'A+';
-    else if(pct >= 93.0) letter = 'A';
-    else if(pct >= 90.0) letter = 'A-';
-    else if(pct >= 87.5) letter = 'B+';
-    else if(pct >= 82.0) letter = 'B';
-    else if(pct >= 79.5) letter = 'B-';
-    else if(pct >= 77.0) letter = 'C+';
-    else if(pct >= 71.0) letter = 'C';
-    else if(pct >= 69.0) letter = 'C-';
-    else if(pct >= 66.0) letter = 'D+';
-    else if(pct >= 60.5) letter = 'D';
-    else if(pct >= 59.0) letter = 'D-';
-    document.getElementById('letterGrade').textContent = letter;
+  var rail=document.getElementById('ledgerRail'),railToggle=document.getElementById('railToggle');
+  railToggle.addEventListener('click',function(){
+    var open=rail.classList.toggle('open');railToggle.setAttribute('aria-expanded',open?'true':'false');
+  });
+  function closeRailMobile(){
+    if(window.innerWidth<=860){rail.classList.remove('open');railToggle.setAttribute('aria-expanded','false')}
   }
-  ids.forEach(id => document.getElementById(id).addEventListener('input', updateCalc));
-  updateCalc();
+  document.querySelectorAll('.reveal-card').forEach(function(card){
+    card.addEventListener('click',function(){card.classList.toggle('open')});
+  });
+  render();
+})();
 </script>
-
 </body>
 </html>
